@@ -1,32 +1,47 @@
-let tasks = [];
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Manager Project</title>
+</head>
+<body>
+  <h2>Task Manager – Open Console</h2>
 
-const addTask = function(task, callback) {
-  tasks.push(task);
-  callback();
-};
+  <script>
+    let taskList = [];
 
-const printTasks = () => {
-  console.log("Current Tasks:", tasks);
-};
+    const displayTasks = function() {
+      console.log("Current Tasks:");
+      taskList.forEach((task, index) => {
+        console.log((index + 1) + ". " + task);
+      });
+    };
 
-addTask("Buy groceries", printTasks);
-addTask("Finish assignment", printTasks);
+    const addTask = function(task, callback) {
+      taskList.push(task);
+      console.log("Task Added:", task);
+      callback();
+    };
 
-const addMultipleTasks = (...newTasks) => {
-  newTasks.forEach(task => tasks.push(task));
-};
+    const addMultipleTasks = (...tasks) => {
+      tasks.forEach(task => {
+        taskList.push(task);
+      });
+      console.log("Multiple Tasks Added.");
+      displayTasks();
+    };
 
-addMultipleTasks("Call mom", "Walk dog", "Read book");
-printTasks();
+    let outsideVar = "I'm outside";
 
-let globalVar = "I'm outside";
+    const checkScope = () => {
+      let insideVar = "I'm inside";
+      console.log("Outside Var:", outsideVar);
+      console.log("Inside Var:", insideVar);
+    };
 
-function checkScope() {
-  let localVar = "I'm inside";
-  console.log("Inside Function - Global:", globalVar);
-  console.log("Inside Function - Local:", localVar);
-}
-
-checkScope();
-
-console.log("Outside Function - Global:", globalVar);
+    addTask("Buy groceries", displayTasks);
+    addTask("Do homework", displayTasks);
+    addMultipleTasks("Clean room", "Go for walk", "Pay bills");
+    checkScope();
+  </script>
+</body>
+</html>
