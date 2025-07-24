@@ -1,26 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>JavaScript Fixed Parameter</title>
-</head>
-<body>
 
-  <h2>Welcome Message</h2>
+function multiply(a, b) {
+    console.log("Fixed Params Result:", a * b);
+}
 
-  <button onclick="greetUser()">Click Me</button>
 
-  <p id="message"></p>
-
-  <script>
-    
-    function greetUser() {
-      showMessage("Welcome to JavaScript Learning!"); 
+function showArguments() {
+    console.log("Using 'arguments' object:");
+    for (let i = 0; i < arguments.length; i++) {
+        console.log(`Argument ${i + 1}:`, arguments[i]);
     }
+}
 
-    function showMessage(text) {
-      document.getElementById("message").innerText = text;
-    }
-  </script>
+function addAll(...nums) {
+    const sum = nums.reduce((acc, val) => acc + val, 0);
+    console.log("Sum using rest operator:", sum);
+}
 
-</body>
-</html>
+
+multiply(4, 5);                  
+showArguments("hello", 42, true); 
+addAll(1, 2, 3, 4, 5);            
