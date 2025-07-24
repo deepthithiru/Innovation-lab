@@ -1,46 +1,37 @@
-function greet(name) {
-  return "Hello, " + name + "!";
-}
-console.log(greet("Deepthi"));
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arrow Function Practice</title>
+</head>
+<body>
+  <h2>Open the console to see the output</h2>
 
-const greetExp = function(name) {
-  return "Hello, " + name + "!";
-};
-console.log(greetExp("Deepthi"));
+  <script>
+    const greet = function(name) {
+      console.log("Hello, " + name + "!");
+    };
 
-const greetArrow = (name) => {
-  return "Hello, " + name + "!";
-};
-console.log(greetArrow("Deepthi"));
+    const add = (a, b) => {
+      return a + b;
+    };
 
-const greetShort = name => "Hello, " + name + "!";
-console.log(greetShort("Deepthi"));
+    const multiply = (a, b) => a * b;
 
-const person = {
-  name: "Deepthi",
-  traditional: function () {
-    console.log("Traditional:", this.name);
-  },
-  arrow: () => {
-    console.log("Arrow:", this.name);
-  }
-};
+    const logItems = (...items) => {
+      items.forEach((item, index) => {
+        console.log("Item " + (index + 1) + ":", item);
+      });
+    };
 
-person.traditional();
-person.arrow();
+    const testThis = () => {
+      console.log(this);
+    };
 
-const add = (a, b) => a + b;
-console.log("Add:", add(3, 4));
-
-const square = x => x * x;
-console.log("Square:", square(5));
-
-const sayHello = () => "Hello!";
-console.log(sayHello());
-
-const isEven = n => n % 2 === 0;
-console.log("Is 8 even?", isEven(8));
-
-const nums = [1, 2, 3];
-const doubled = nums.map(n => n * 2);
-console.log("Doubled:", doubled);
+    greet("Deepthi");
+    console.log("Sum:", add(5, 3));
+    console.log("Product:", multiply(4, 6));
+    logItems("Pen", "Book", "Bottle");
+    testThis();
+  </script>
+</body>
+</html>
