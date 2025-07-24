@@ -1,22 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Function Examples</title>
+</head>
+<body>
+  <h2>Open the console to see the output</h2>
 
-function multiply(a, b) {
-    console.log("Fixed Params Result:", a * b);
-}
-
-
-function showArguments() {
-    console.log("Using 'arguments' object:");
-    for (let i = 0; i < arguments.length; i++) {
-        console.log(`Argument ${i + 1}:`, arguments[i]);
+  <script>
+    function greet(name) {
+      console.log("Hello, " + name + "!");
     }
-}
 
-function addAll(...nums) {
-    const sum = nums.reduce((acc, val) => acc + val, 0);
-    console.log("Sum using rest operator:", sum);
-}
+    function add(a, b) {
+      console.log("Sum:", a + b);
+    }
 
+    function multiplyAll(...numbers) {
+      let result = 1;
+      for (let num of numbers) {
+        result *= num;
+      }
+      console.log("Product:", result);
+    }
 
-multiply(4, 5);                  
-showArguments("hello", 42, true); 
-addAll(1, 2, 3, 4, 5);            
+    function listAll() {
+      for (let i = 0; i < arguments.length; i++) {
+        console.log("Arg", i + 1 + ":", arguments[i]);
+      }
+    }
+
+    greet("Deepthi");
+    add(10, 20);
+    multiplyAll(2, 3, 4);
+    listAll("Apple", "Banana", "Cherry");
+  </script>
+</body>
+</html>
