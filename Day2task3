@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Break and Continue</title>
+</head>
+<body>
+
+<script>
+for (let num = 2; num <= 100; num++) {
+  let isPrime = true;
+  for (let div = 2; div < num; div++) {
+    if (num % div === 0) {
+      isPrime = false;
+      break;
+    }
+  }
+  if (isPrime) {
+    document.write("First prime number found: " + num + "<br>");
+    break;
+  }
+}
+
+for (let i = 1; i <= 20; i++) {
+  if (i % 2 === 0) {
+    continue;
+  }
+  document.write("Odd number: " + i + "<br>");
+}
+</script>
+
+</body>
+</html>
