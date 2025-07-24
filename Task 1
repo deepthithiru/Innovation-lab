@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Fixed Parameter</title>
+</head>
+<body>
+
+  <h2>Welcome Message</h2>
+
+  <button onclick="greetUser()">Click Me</button>
+
+  <p id="message"></p>
+
+  <script>
+    
+    function greetUser() {
+      showMessage("Welcome to JavaScript Learning!"); 
+    }
+
+    function showMessage(text) {
+      document.getElementById("message").innerText = text;
+    }
+  </script>
+
+</body>
+</html>
