@@ -1,0 +1,46 @@
+function greet(name) {
+  return "Hello, " + name + "!";
+}
+console.log(greet("Deepthi"));
+
+const greetExp = function(name) {
+  return "Hello, " + name + "!";
+};
+console.log(greetExp("Deepthi"));
+
+const greetArrow = (name) => {
+  return "Hello, " + name + "!";
+};
+console.log(greetArrow("Deepthi"));
+
+const greetShort = name => "Hello, " + name + "!";
+console.log(greetShort("Deepthi"));
+
+const person = {
+  name: "Deepthi",
+  traditional: function () {
+    console.log("Traditional:", this.name);
+  },
+  arrow: () => {
+    console.log("Arrow:", this.name);
+  }
+};
+
+person.traditional();
+person.arrow();
+
+const add = (a, b) => a + b;
+console.log("Add:", add(3, 4));
+
+const square = x => x * x;
+console.log("Square:", square(5));
+
+const sayHello = () => "Hello!";
+console.log(sayHello());
+
+const isEven = n => n % 2 === 0;
+console.log("Is 8 even?", isEven(8));
+
+const nums = [1, 2, 3];
+const doubled = nums.map(n => n * 2);
+console.log("Doubled:", doubled);
