@@ -1,0 +1,32 @@
+let tasks = [];
+
+const addTask = function(task, callback) {
+  tasks.push(task);
+  callback();
+};
+
+const printTasks = () => {
+  console.log("Current Tasks:", tasks);
+};
+
+addTask("Buy groceries", printTasks);
+addTask("Finish assignment", printTasks);
+
+const addMultipleTasks = (...newTasks) => {
+  newTasks.forEach(task => tasks.push(task));
+};
+
+addMultipleTasks("Call mom", "Walk dog", "Read book");
+printTasks();
+
+let globalVar = "I'm outside";
+
+function checkScope() {
+  let localVar = "I'm inside";
+  console.log("Inside Function - Global:", globalVar);
+  console.log("Inside Function - Local:", localVar);
+}
+
+checkScope();
+
+console.log("Outside Function - Global:", globalVar);
